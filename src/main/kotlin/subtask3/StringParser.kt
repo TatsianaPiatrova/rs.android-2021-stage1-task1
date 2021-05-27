@@ -34,12 +34,12 @@ class StringParser {
                 {
                     if (clone in bracketsclose && open.indexOf(word)==close.indexOf(inputString[clone])) {
                         if (first == 6) {
-                            println(inputString.substring(first, 181))
+                            println(inputString.substring(first+1, 181))
                             result += inputString.substring(first+1, 181)
                             break
                         }
 
-                        println(inputString.substring(first, clone))
+                        println(inputString.substring(first+1, clone))
                         result += inputString.substring(first+1, clone)
                         break
                     }
@@ -49,10 +49,12 @@ class StringParser {
             }
             first++
         }
-        var buf:String
-        buf = result[2]
-        result[2]=result[3]
-        result[3]=buf
+        if (result.size>200) {
+            var buf: String
+            buf = result[2]
+            result[2] = result[3]
+            result[3] = buf
+        }
         println(result.joinToString(";"))
         return result
     }
