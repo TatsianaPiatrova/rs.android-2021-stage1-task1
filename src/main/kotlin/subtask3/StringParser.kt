@@ -2,7 +2,7 @@ package subtask3
 
 class StringParser {
 
-    // TODO: Complete the following function
+
     fun getResult(inputString: String): Array<String> {
         val open = listOf('[','<','(')
         val close = listOf(']','>',')')
